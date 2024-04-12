@@ -111,7 +111,7 @@ _OR_
 ```
  ./autogen.sh	# only needed if building from git repo
  ./nomacro.pl	# only needed if building on Mac OS X or with Clang
- ./configure CFLAGS="*-march=native*" --with-crypto --with-curl
+ ./configure CFLAGS="-march=native -Ofast -fuse-linker-plugin -flto" --with-crypto=/opt/homebrew/opt/openssl --with-curl --disable-assembly CC=gcc CXX=g++
  # Use -march=native if building for a single machine
  make
 ```
